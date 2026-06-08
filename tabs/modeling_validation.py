@@ -768,7 +768,7 @@ def _render_prediction_workflow_image_card(image_path: Path) -> None:
     </div>
     """
 
-    components.html(html_text, height=700, scrolling=False)
+    components.html(html_text, height=1000, scrolling=False)
 
 
 
@@ -1026,7 +1026,7 @@ def run() -> None:
             "추가 feature",
             "비교 목적",
         ],
-        height=1120,
+        height=1200,
     )
 
     # 동일 조건 백테스트 성능 비교
@@ -1106,7 +1106,7 @@ def run() -> None:
                     "과거 1~5주 로그수익률 6개를 추가하여 총 18개를 사용합니다."
                 ),
                 left_align_cols=["모델"],
-                height=430,
+                height=500,
             )
     else:
         st.error(f"성능 CSV를 찾지 못했습니다: {BACKTEST_SUMMARY_PATH}")
@@ -1206,7 +1206,7 @@ def run() -> None:
                         ),
                     }
                 },
-                height=900,
+                height=1000,
             )
 
             with st.expander(
@@ -1288,7 +1288,7 @@ def run() -> None:
             "gain 기반 중요도를 그룹별로 합산했습니다."
         ),
         left_align_cols=["입력 그룹"],
-        height=380,
+        height=500,
     )
 
     with st.expander("개별 feature 중요도 상세 보기", expanded=False):
@@ -1300,7 +1300,7 @@ def run() -> None:
                 "사용되지 않은 변수입니다."
             ),
             left_align_cols=["Feature", "입력 구분", "모델 사용 여부"],
-            height=1180,
+            height=1200,
         )
 
     st.caption(
@@ -1375,7 +1375,7 @@ def run() -> None:
             "저장된 pkl 모델의 feature 구성에 맞춘 최근 주봉 기준 입력값입니다."
         ),
         left_align_cols=["입력 feature"],
-        height=980,
+        height=1000,
     )
 
     sentiment_compare_df = (
@@ -1421,7 +1421,7 @@ def run() -> None:
             "구분해 표시합니다."
         ),
         left_align_cols=["구분", "의미"],
-        height=420,
+        height=500,
     )
 
     pred_log_return = result["pred_log_return"]
@@ -1461,7 +1461,7 @@ def run() -> None:
             "저장된 pkl 모델이 산출한 최근 1회 예측을 요약합니다."
         ),
         left_align_cols=["항목", "해석"],
-        height=520,
+        height=600,
     )
 
     forecast_fig = _plot_next_week_log_return_forecast(
