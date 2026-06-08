@@ -1033,7 +1033,6 @@ def run() -> None:
     add_vertical_space(48)
     st.subheader("동일 조건 백테스트 성능 비교")
     st.caption(
-        "프로젝트 루트의 최신 `model_backtest_summary.csv`를 사용합니다. "
         "단순 기준선 2개와 최종 실험모델 8개가 동일한 58주 테스트 구간에서 "
         "비교됩니다."
     )
@@ -1054,7 +1053,7 @@ def run() -> None:
             .reset_index(drop=True)
         )
 
-        performance_display_df = _format_performance_table(performance_df)
+        performance_display_df = (_format_performance_table(performance_df))
         render_presentation_table(
             performance_display_df,
             title="최종 기준선 및 Model A-1~D 성능 비교",
