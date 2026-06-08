@@ -1064,8 +1064,8 @@ def run() -> None:
                 "DA는 다음 주 실제 방향과 예측 방향이 일치한 비율입니다."
             ),
             left_align_cols=["모델"],
-            height=1200,
-        )
+            
+        ) # height=1200,
 
         left, center, right = st.columns([0.08, 0.84, 0.08])
         with center:
